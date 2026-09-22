@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import text
 from sqlalchemy.orm import Session
 
-from services.common.db import get_db  # change to your actual DB dependency
+from services.common.db import get_db  
 
 router = APIRouter(tags=["health"])
 
