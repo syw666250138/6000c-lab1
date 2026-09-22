@@ -23,11 +23,13 @@ from services.common.schemas import (
     HealthResponse,
     JobRead,
 )
+from services.api.app.routes.health import router as health_router
 
 configure_logging()
 logger = logging.getLogger("services.api.main")
 
 app = FastAPI(title="MAIE 6000C Starter API", version="0.1.0")
+app.include_router(health_router)
 
 HTTP_REQUESTS = Counter(
     "api_http_requests_total",

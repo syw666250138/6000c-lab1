@@ -41,3 +41,10 @@ If AI processing fails:
 To remove local database state:
 
 - `docker compose down -v --remove-orphans`
+
+## Readiness probe
+
+`GET /health/ready` returns `200` only when the API can execute a simple query
+against PostgreSQL. It is used by Docker Compose as the API healthcheck.
+
+`GET /health` remains the liveness check and does not depend on the database.
